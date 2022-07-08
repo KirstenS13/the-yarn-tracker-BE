@@ -1,12 +1,4 @@
 exports.up = function(knex) {
-    // order to set up tables:
-    // user
-    // colorway
-    // fiber
-    // yarntype
-    // yarntype_fiber
-    // colorway_yarntype
-    // skein (stash)
     knex.schema.createTable('user', (table) => {
         table.uuid('id').primary().unique().notNullable()
         table.text('username').unique().notNullable()
@@ -34,7 +26,6 @@ exports.up = function(knex) {
         table.integer('grams')
         table.integer('ounces')
         table.text('cyc_weight_category')
-        table.uuid('yarntype_fiber_id').references('id').inTable('yarntype_fiber').unique()
         table.text('notes')
     })
 
@@ -60,5 +51,11 @@ exports.up = function(knex) {
 };
 
 exports.down = function(knex) {
-  
+    knex.schema.dropTableIfExists('skein')
+    knex.schema.dropTableIfExists('colorway_yarntype')
+    knex.schema.dropTableIfExists('yarntype_fiber')
+    knex.schema.dropTableIfExists('yarntype')
+    knex.schema.dropTableIfExists('fiber')
+    knex.schema.dropTableIfExists('colorway')
+    knex.schema.dropTableIfExists('user')
 };
