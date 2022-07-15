@@ -1,5 +1,3 @@
-// import { v4 as uuidv4 } from 'uuid';
-
 exports.seed = async function(knex) {
   await knex('yarntype').insert([
     { id: '1', name: 'mandala', brand: 'lion brand', yards: 590, meters: 540, grams: 150, ounces: 5.3, cyc_weight_category: '3 - Light, DK, Light Worsted', notes: 'a yarn full of joy' },

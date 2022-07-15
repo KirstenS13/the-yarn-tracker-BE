@@ -1,5 +1,3 @@
-// import { v4 as uuidv4 } from 'uuid';
-
 exports.seed = async function(knex) {
   await knex('skein').insert([
     { id: '1', user_id: '1', colorway_yarntype_id: '2', quantity: 1 },

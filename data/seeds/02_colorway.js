@@ -1,5 +1,3 @@
-// import { v4 as uuidv4 } from 'uuid';
-
 exports.seed = async function(knex) {
   await knex('colorway').insert([
     { id: '1', name: 'serpent' },
