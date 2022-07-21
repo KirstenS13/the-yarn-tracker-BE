@@ -1,4 +1,5 @@
 const express = require('express');
+const Yarntype = require('../models/yarntype_model');
 
 const router = express.Router();
 
