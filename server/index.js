@@ -1,5 +1,6 @@
 // imports
 const express = require('express');
+const yarntypeRouter = require('./routers/yarntype_router');
 
 // create server
 const server = express();
@@ -10,6 +11,7 @@ const port = process.env.PORT || 3000;
 server.use(express.json());
 
 // use routes and routers here
+server.use(yarntypeRouter);
 server.get('/', (req, res) => {
     res.send('Hello, this is the server')
 });
